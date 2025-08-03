@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI大模型导航站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+      
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+      
+        header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+      
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+      
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+      
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+      
+        .search-box {
+            margin: 2rem auto;
+            max-width: 600px;
+            display: flex;
+        }
+      
+        .search-box input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+      
+        .search-box button {
+            padding: 12px 25px;
+            background: #4a6cf7;
+            color: white;
+            border: none;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+      
+        .search-box button:hover {
+            background: #3a56d8;
+        }
+      
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+      
+        .model-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+      
+        .model-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+      
+        .model-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+      
+        .model-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+      
+        .model-developer {
+            color: #4a5568;
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+      
+        .model-description {
+            color: #4a5568;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+      
+        .model-footer {
+            padding: 1rem 1.5rem;
+            background: #f8fafc;
+            display: flex;
+            justify-content: space-between;
+        }
+      
+        .model-link {
+            color: #4a6cf7;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+      
+        .model-link:hover {
+            text-decoration: underline;
+        }
+      
+        .model-type {
+            background: #e9f7ef;
+            color: #38a169;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+      
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #718096;
+            margin-top: 3rem;
+            border-top: 1px solid #e2e8f0;
+        }
+      
+        @media (max-width: 768px) {
+            .models-grid {
+                grid-template-columns: 1fr;
+            }
+          
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AI大模型导航站</h1>
+            <p class="subtitle">探索全球领先的人工智能大模型，一站式获取最新AI技术资源</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-box">
+            <input type="text" placeholder="搜索AI模型、公司或技术关键词...">
+            <button>搜索</button>
+        </div>
+
+        <div class="models-grid">
+            <!-- GPT-4 -->
+            <div class="model-card">
+                <div class="model-header">
+                    <h2 class="model-name">GPT-4</h2>
+                    <div class="model-developer">OpenAI</div>
+                    <p class="model-description">多模态大型语言模型，支持文本和图像输入，具有强大的推理和创意能力。</p>
+                    <div class="model-type">多模态</div>
+                </div>
+                <div class="model-footer">
+                    <a href="https://openai.com/gpt-4" class="model-link" target="_blank">访问官网</a>
+                </div>
+            </div>
+          
+            <!-- Claude -->
+            <div class="model-card">
+                <div class="model-header">
+                    <h2 class="model-name">Claude 3</h2>
+                    <div class="model-developer">Anthropic</div>
+                    <p class="model-description">专注于安全性和实用性的AI助手，具有超长上下文理解能力。</p>
+                    <div class="model-type">文本生成</div>
+                </div>
+                <div class="model-footer">
+                    <a href="https://www.anthropic.com" class="model-link" target="_blank">访问官网</a>
+                </div>
+            </div>
+          
+            <!-- Gemini -->
+            <div class="model-card">
+                <div class="model-header">
+                    <h2 class="model-name">Gemini</h2>
+                    <div class="model-developer">Google DeepMind</div>
+                    <p class="model-description">谷歌推出的多模态AI模型系列，整合了DeepMind的技术突破。</p>
+                    <div class="model-type">多模态</div>
+                </div>
+                <div class="model-footer">
+                    <a href="https://deepmind.google/technologies/gemini" class="model-link" target="_blank">访问官网</a>
+                </div>
+            </div>
+          
+            <!-- Llama -->
+            <div class="model-card">
+                <div class="model-header">
+                    <h2 class="model-name">Llama 3</h2>
+                    <div class="model-developer">Meta AI</div>
+                    <p class="model-description">开源大语言模型，支持多种语言任务，社区生态丰富。</p>
+                    <div class="model-type">开源模型</div>
+                </div>
+                <div class="model-footer">
+                    <a href="https://ai.meta.com/llama" class="model-link" target="_blank">访问官网</a>
+                </div>
+            </div>
+          
+            <!-- DeepSeek -->
+            <div class="model-card">
+                <div class="model-header">
+                    <h2 class="model-name">DeepSeek R1</h2>
+                    <div class="model-developer">深度求索</div>
+                    <p class="model-description">128K超长上下文，强大的中文理解和推理能力，免费开放使用。</p>
+                    <div class="model-type">中文优化</div>
+                </div>
+                <div class="model-footer">
+                    <a href="https://www.deepseek.com" class="model-link" target="_blank">访问官网</a>
+                </div>
+            </div>
+          
+            <!-- 通义千问 -->
+            <div class="model-card">
+                <div class="model-header">
+                    <h2 class="model-name">通义千问</h2>
+                    <div class="model-developer">阿里巴巴</div>
+                    <p class="model-description">阿里云推出的中文大模型，深度集成阿里云生态服务。</p>
+                    <div class="model-type">企业应用</div>
+                </div>
+                <div class="model-footer">
+                    <a href="https://qianwen.aliyun.com" class="model-link" target="_blank">访问官网</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 AI大模型导航站 | 每日更新全球AI前沿动态</p>
+        </div>
+    </footer>
+</body>
+</html>
